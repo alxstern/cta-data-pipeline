@@ -1,0 +1,2 @@
+# CTA Data Pipeline
+A real-time data pipeline collecting data from the [CTA Train Tracker API](https://www.transitchicago.com/developers/traintracker/) with the goal of modeling how train delays propagate throughout the different CTA lines.
