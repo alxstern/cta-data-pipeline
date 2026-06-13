@@ -1,4 +1,5 @@
 import logging
+import os
 import time
 from datetime import datetime, timezone
 
@@ -91,7 +92,8 @@ def run() -> None:
     """Poll the CTA API in a loop and write train positions to DuckDB."""
     setup_logging()
     api_key = get_cta_tt_api_key()
-    conn = init_db()
+    db_path = os.getenv("DB_PATH", "data/cta.db")
+    conn = init_db(db_path)
 
     logger.info("Starting CTA collector — tracking all lines, polling every %ds", POLL_INTERVAL_SECONDS)
 
