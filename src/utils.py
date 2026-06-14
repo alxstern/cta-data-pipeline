@@ -1,5 +1,6 @@
 import logging
 import os
+import sys
 
 from dotenv import load_dotenv
 
@@ -12,6 +13,7 @@ def setup_logging() -> None:
         level=logging.INFO,
         format="%(asctime)s %(levelname)s %(name)s — %(message)s",
         datefmt="%Y-%m-%dT%H:%M:%SZ",
+        stream=sys.stdout,
     )
 
 
